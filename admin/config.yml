@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: oyebamijipaul880/My-portfolio
+  branch: main
+  auth_type: implicit
+  app_id: "Ov23liWfA9wIFDEkg2Yc"
+  base_url: https://decapcms.org
+  auth_endpoint: auth.html
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "graphics"
+    label: "Graphics Gallery"
+    folder: "graphics"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text", required: false }
