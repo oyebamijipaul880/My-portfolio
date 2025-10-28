@@ -3,7 +3,7 @@ backend:
   repo: oyebamijipaul880/My-portfolio
   branch: main
   auth_type: implicit
-  app_id: "Ov23liWfA9wIFDEkg2Yc"
+  app_id: "Ov23liRTvHXOURcaVXgs"
   base_url: https://decapcms.org
   auth_endpoint: auth.html
 
