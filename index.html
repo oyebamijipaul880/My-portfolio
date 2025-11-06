@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>king - Portfolio</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; scroll-behavior: smooth; }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: orange;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav.scrolled {
+      background: darkorange;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    nav ul li { margin: 0 15px; }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    nav ul li a:hover {
+      background: white;
+      color: orange;
+    }
+    nav ul li a.active {
+      background: white;
+      color: orange;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      /* Corrected background CSS */
+      background-image: url("your-graphic.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+    .hero .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: orange;
+      color: white;
+      text-decoration: none;
+      margin: 5px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    .btn:hover { background: white; color: orange; }
+
+    /* Sections */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      text-align: center;
+      color: orange;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    /* About */
+    .about { text-align: center; }
+    .about img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact a {
+      display: inline-block;
+      padding: 14px 24px;
+      background: orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    .contact a:hover { background: white; color: orange; }
+
+    /* Footer */
+    footer {
+      background: orange;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#graphics">Recent Graphics</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="overlay">
+      <h1>Good day ✨, I’m KING </h1>
+      <p>Graphics Designer | UI student </p>
+      <a href="#graphics" class="btn">See My Work</a>
+      <a href="https://wa.me/2349075207340" target="_blank" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="yourphoto.jpg" alt="Oyebamiji Paul">
+    <p>
+      <strong>Ready to take your brand to the next level through appealing graphics?<br></strong>
+      I’m king, a passionate graphics designer.
+      I specialize in creating modern, professional, and visually appealing designs.  
+      My work combines creativity and functionality to help brands stand out.
+    </p>
+  </section>
+
+  <!-- Recent Graphics -->
+  <section id="graphics">
+    <h2>Recent Graphics</h2>
+    <div class="gallery">
+      <img src="graphic1.jpg" alt="Graphic 1">
+      <img src="graphic5.jpg" alt="Graphic 5">
+      <img src="graphics6.jpg" alt="Graphic 6">
+      <img src="graphics8.jpg" alt="Graphic 8">
+      <img src="graphics9.jpg" alt="Graphic 9">
+      <img src="graphics11.jpg" alt=" Graphic 11">
+      <img src="graphics12.jpg" alt="Graphic 12">
+      <img src="graphics15.jpg" alt="Graphic 15">
+      <img src="graphics16.jpg" alt="Graphics 16">
+      <img src="graphics13.jpg" alt="Graphic 13">
+      <img src="graphics10.jpg" alt="Graphics 10">
+      <img src="graphics7.jpg" alt="Graphic 7">
+      </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <a href="https://wa.me/2349075207340" target="_blank">Chat with me on WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 KING graphics. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const sections = document.querySelectorAll("section");
+
+    // Navbar color change + active link highlight
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Section animations on scroll
+    const revealSections = () => {
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+          section.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealSections);
+    window.addEventListener("load", revealSections);
+  </script>
+
+</body>
+</html>
